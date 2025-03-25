@@ -1,0 +1,32 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    max-width: 700px;
+    margin-top: 50px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.task-card{
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+.delete-btn{
+    background-color: #dc3545;
+    border:none;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background-color: #b52b3b;
+}

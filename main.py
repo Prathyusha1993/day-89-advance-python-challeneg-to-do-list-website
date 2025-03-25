@@ -39,7 +39,7 @@ with app.app_context():
 
 class TodoForm(FlaskForm):
     task = StringField('Task', validators=[DataRequired()])
-    status = BooleanField('Status', validators=[InputRequired()], default=False)
+    status = BooleanField('Status', default=False)
     priority = SelectField('Priority', choices=[('Low','Low'), ('Medium', 'Medium'),('High', 'High')])
     due_date = DateField('Due Date', format='%Y-%m-%d')
     category = StringField('Category', validators=[DataRequired()])

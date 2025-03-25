@@ -3,11 +3,9 @@
 {% block title %} Add Todo {% endblock %}
 
 {% block content %}
-<div>
-    <div>
-        <h1> Add a new todo into the database </h1>
-        {{ render_form(form, novalidate=True) }}
-        <p><a href="{{ url_for('home') }}">See all Todos</a></p>
-    </div>
+<div class="card p-4 shadow-sm">
+        <h2 class="text-center"> Add a new todo into the database </h2>
+        {{ render_form(form, novalidate=True, button_map={'submit': 'primary'}) }}
+        <p class="text-center mt-3"><a class="btn btn-secondary" href="{{ url_for('home') }}">See all Todos</a></p>
 </div>
 {% endblock %}

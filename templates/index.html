@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Todo List Website{% endblock %}
+
+{% block content %}
+<div>
+    <div>
+        <h1>TODO LIST WEBSITE</h1>
+        <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.task }}</strong> -
+                Priority: {{ task.priority }} |
+                Status: {% if task.status %} Completed {% else %} Pending {% endif %} |
+                Due: {{ task.due_date.strftime('%Y-%m-%d') if task.due_date else 'No due date' }} |
+                Category: {{ task.category }}
+                <form action="{{ url_for('delete_todo', task_id=task.id) }}" method="post" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this task?')">🗑️Delete</button>
+                </form>
+            </li>
+        {% else %}
+            <li> No task added yet.</li>
+        {% endfor %}
+        </ul>
+        <a href="{{ url_for('add_todo') }}">Add New Task</a>
+    </div>
+</div>
+{% endblock %}
